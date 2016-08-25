@@ -62,17 +62,17 @@ for record in training_data_list:
 	targets[int(all_values[0])] = .99
 	n.train(inputs, targets)
 	if i % 1000 == 0:
-		print i
+		print(i)
 	i += 1
 	pass
 
 # Testing
 # This will display the id of the image, followed by an array of 10 floats,
 # displaying the probability of each number
-for j in xrange(100):
+for j in range(100):
 	all_values = training_data_list[j].split(',')
-	print all_values[0]
-	print n.query((np.asfarray(all_values[1:]) / 255.0 * .99) + 0.01)
+	print(all_values[0])
+	print(n.query((np.asfarray(all_values[1:]) / 255.0 * .99) + 0.01))
 
 
 
